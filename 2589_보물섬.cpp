@@ -14,9 +14,7 @@ void bfs(int _i,int _j){
 		int y=q.front().first;
 		int x=q.front().second;
 		q.pop();
-		//if(visited[ny][nx]==1)
-		//	continue;
-		//visited[ny][nx]=1;
+		
 		rep(i,0,4){
 			int ny=y+dy[i];
 			int nx=x+dx[i];
