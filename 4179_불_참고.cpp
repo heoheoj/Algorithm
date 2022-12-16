@@ -12,7 +12,7 @@ int main(){
 	cin.tie(0); 
 	cout.tie(0);
 	fill (&person[0][0],&person[0][0]+1005*1005,INF);
-	fill (&fire[0][0],&fire[0][0]+1005*1005,INF);//***c++¿¡¼­ ¹è¿­ Ã¤¿ì´Â ¹ý 
+	fill (&fire[0][0],&fire[0][0]+1005*1005,INF);
 	queue<pair<int, int> > q;
 	cin >>R>>C;
 	for(int i=0;i<R;i++){
@@ -65,57 +65,13 @@ int main(){
 		}
 	}
 	
-	/*	
-	rep(i,0,R){
-		rep(j,0,C){
-			cout << fire[i][j] << " ";
-		}
-		cout <<endl;
-	}
-	cout <<endl;
-	rep(i,0,R){
-		rep(j,0,C){
-			cout << person[i][j] << " ";
-		}
-		cout <<endl;
-	}
-
-
-	//cout <<endl;
-	int _max=0;
-	rep(i,0,R){
-		rep(j,0,C){
-			if(person[i][j]<fire[i][j]){
-				_max=max(_max,person[i][j]);
-			}
-			
-		}
-	}
-
-	int _max=0;
-	for(int i=0;i<R;i+=R-1){
-		for(int j=0;j<C;j++){
-			if(person[i][j]<fire[i][j]){
-				_max=max(_max,person[i][j]);
-			}
 	
-		}
-	}
-	for(int i=1;i<R-1;i++){
-		for(int j=0;j<C;j+=C-1){
-			if(person[i][j]<fire[i][j]){
-				_max=max(_max,person[i][j]);
-			}
-	
-		}
-	}	
-	*/
 	int _min=INF;
 	for(int i=0;i<R;i++){
 		for(int j=0;j<C;j++){
-			if(i==0||i==R-1||j==0||j==C-1){ //***¸ð¼­¸®¸¸ Á¢±ÙÇÏ´Â ¹æ¹ý 
-				if(person[i][j]<fire[i][j]) //fire°¡ ÁÖ¾îÁöÁö ¾Ê´Â °æ¿ìµµ ÀÖ±â¶§¹®¿¡ ¹è¿­ ÃÊ±âÈ­¸¦ INF·Î ÇØÁà¾ßÇÑ´Ù. 
-				//fire[i][j]!=INF ·Î ÀÎÇØ ¹Ý·Ê°¡ ¹ß»ýÇÑ´Ù.  
+			if(i==0||i==R-1||j==0||j==C-1){ //***ëª¨ì„œë¦¬ë§Œ ì ‘ê·¼í•˜ëŠ” ë°©ë²• 
+				if(person[i][j]<fire[i][j]) //fireê°€ ì£¼ì–´ì§€ì§€ ì•ŠëŠ” ê²½ìš°ë„ ìžˆê¸°ë•Œë¬¸ì— ë°°ì—´ ì´ˆê¸°í™”ë¥¼ INFë¡œ í•´ì¤˜ì•¼í•œë‹¤. 
+				//fire[i][j]!=INF ë¡œ ì¸í•´ ë°˜ë¡€ê°€ ë°œìƒí•œë‹¤.  
 					_min=min(_min,person[i][j]); 
 			}
 		}
