@@ -1,6 +1,6 @@
 #include<iostream>
-#include<cstring> // memeset Çì´õ 
-#include<cmath> // abs Çì´õ 
+#include<cstring> // memeset í—¤ë” 
+#include<cmath> // abs í—¤ë” 
 #include<queue>
 #define rep(i,start,end) for(int i=start;i<end;i++)
 using namespace std;
@@ -20,14 +20,10 @@ void move_people(){
 		int y=_union.front().first;
 		int x=_union.front().second;
 		
-	//	cout << "("<< y << "," << x <<")";
-		
 		pass[y][x]=1;
 		_union.pop();
 		arr[y][x]=average;
 	}
-	
-//	cout <<average<<endl;
 	flag=true;
 }
 void bfs(){
@@ -53,8 +49,6 @@ void bfs(){
 				}
 			}
 		}
-	//	if(move_flag) 
-	//		cnt++;// ¿¬ÇÕ±¹ ¼ıÀÚ  
 	}
 	if(move_flag){ //cnt>1 
 		move_people();
@@ -69,14 +63,12 @@ int main(void){
 			cin >> arr[i][j];
 		}
 	}
-	while(1){ //¿¹Á¦ 4 ¿¹¿Ü   ÇÑ¹ø ´Ù µ¹°í answer++ÇÏ°í ´Ù½Ã µ¹¸é¼­ ´ÙÀ½ ½ºÅÜÇØ¾ßµÇ´Âµ¥ ÀÌÀü²¨¶û °ãÃ³¼­ answerÀÌ ÇÑ¹ø¸¸ Áõ°¡ 
+	while(1){  
 		flag=false;
 		memset(pass,0,sizeof(pass));
 		memset(visited,0,sizeof(visited));
-		//q=queue<pair<int,int> >();
 		
-		
-		rep(i,0,N){     //while¹®À¸·Î ÇØ¾ßµÉ°Í°°Àºµ¥  ¸ğµç °ª ´Ù µ¹¾Ò´Âµ¥ move_flag°¡ false¸é°è¼Ó µ¹°Ô 
+		rep(i,0,N){     
 			rep(j,0,N){
 				if(pass[i][j]==1)
 					continue;
@@ -90,8 +82,6 @@ int main(void){
 				_union.push({i,j});
 				visited[i][j]=1;
 				bfs();
-				//if(_union.size()==1)
-				//	continue;
 			}
 		}
 		if(flag)
