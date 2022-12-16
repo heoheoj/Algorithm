@@ -8,7 +8,6 @@ using namespace std;
 vector <int> num;
 vector <char> opt;
 int n,_max=-987654321;
-//char c;
 
 int oper(int a,int b, char c){
 	if(c=='+') return a+b;
@@ -30,27 +29,22 @@ void fun(int idx,int _num){
 }
 
 int main(void){
-//???	char c[20];
-	ios_base::sync_with_stdio(false);
-    cin.tie(NULL); //?????
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); 
     cout.tie(NULL);  
     
 	string c;
 	cin >> n;
-	cin >> c; //ÀÔ·Â ¹Ş´Â °Í ¹®ÀÚ¿­·Î ¸»°í ÇÏ³ª¾¿Àº? 
+	cin >> c; 
 	rep(i,0,n){
 		
-		if(i%2==0) // 0,2,
-			num.push_back(c[i]-'0'); //¹®ÀÚ¸¦ Á¤¼ö·Î º¯È¯
+		if(i%2==0) 
+			num.push_back(c[i]-'0'); //ë¬¸ìë¥¼ ì •ìˆ˜ë¡œ ë³€í™˜
 		else
 			opt.push_back(c[i]); 
 			
-	//	cout<< c[i]-'0'<<" ";
+	
 	}
-	//cout <<endl;cout <<endl;
-	//rep(i,0,num.size())
-	//	cout << num[i]<<" ";
-//	cout <<endl;
 	fun(0,num[0]);
 	cout << _max;
 } 
